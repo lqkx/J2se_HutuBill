@@ -1,25 +1,96 @@
 package gui.panel;
+ 
+import util.CircleProgressBar;
+import util.ColorUtil;
+import util.GUIUtil;
 
 import javax.swing.*;
-
-public class SpendPanel {
-    public static SpendPanel instance = new SpendPanel();
-
-    JLabel lMonthSpend = new JLabel("æœ¬æœˆæ¶ˆè´¹");
-    JLabel lTodaySpend = new JLabel("ä»Šæ—¥æ¶ˆè´¹");
-    JLabel lAvgSpendPerDay = new JLabel("æ—¥å‡æ¶ˆè´¹");
-    JLabel lMonthLeft = new JLabel("æœ¬æœˆå‰©ä½™");
-    JLabel lDayAvgAvailable = new JLabel("æ—¥å‡å¯ç”¨");
-    JLabel lMonthLeftDay = new JLabel("è·ç¦»æœˆæœ«");
-
-    JLabel vMonthSpend = new JLabel("ï¿¥2300");
-    JLabel vTodaySpend = new JLabel("ï¿¥25");
-    JLabel vAvgSpendPerDay = new JLabel("ï¿¥120");
-    JLabel vMonthAvailable = new JLabel("ï¿¥2084");
-    JLabel vDayAvgAvailable = new JLabel("ï¿¥389");
-    JLabel vMonthLeftDay = new JLabel("15å¤©");
-
-    private SpendPanel(){
-
+import java.awt.*;
+ 
+/**
+ * @author lqkx
+ */
+public class SpendPanel extends JPanel{
+    static{
+        GUIUtil.useLNF();
     }
+    public static SpendPanel instance = new SpendPanel();
+ 
+    public JLabel lMonthSpend = new JLabel("±¾ÔÂÏû·Ñ");
+    public JLabel lTodaySpend = new JLabel("½ñÈÕÏû·Ñ");
+    public JLabel lAvgSpendPerDay = new JLabel("ÈÕ¾ùÏû·Ñ");
+    public JLabel lMonthLeft = new JLabel("±¾ÔÂÊ£Óà");
+    public JLabel lDayAvgAvailable = new JLabel("ÈÕ¾ù¿ÉÓÃ");
+    public JLabel lMonthLeftDay = new JLabel("¾àÀëÔÂÄ©");
+ 
+    public JLabel vMonthSpend = new JLabel("£¤2300");
+    public JLabel vTodaySpend = new JLabel("£¤25");
+    public JLabel vAvgSpendPerDay = new JLabel("£¤120");
+    public JLabel vMonthAvailable = new JLabel("£¤2084");
+    public JLabel vDayAvgAvailable = new JLabel("£¤389");
+    public JLabel vMonthLeftDay = new JLabel("15Ìì");
+ 
+    CircleProgressBar bar;
+ 
+    public SpendPanel() {
+        this.setLayout(new BorderLayout());
+        bar = new CircleProgressBar();
+        bar.setBackgroundColor(ColorUtil.blueColor);
+ 
+        GUIUtil.setColor(ColorUtil.grayColor, lMonthSpend, lTodaySpend, lAvgSpendPerDay, lMonthLeft, lDayAvgAvailable,
+                lMonthLeftDay, vAvgSpendPerDay, vMonthAvailable, vDayAvgAvailable, vMonthLeftDay);
+        GUIUtil.setColor(ColorUtil.blueColor, vMonthSpend, vTodaySpend);
+ 
+        vMonthSpend.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 23));
+        vTodaySpend.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 23));
+ 
+        this.add(center(), BorderLayout.CENTER);
+        this.add(south(), BorderLayout.SOUTH);
+ 
+    }
+ 
+    private JPanel center() {
+        JPanel p = new JPanel();
+        p.setLayout(new BorderLayout());
+        p.add(west(), BorderLayout.WEST);
+        p.add(center2(),BorderLayout.CENTER);
+ 
+        return p;
+    }
+ 
+    private Component center2() {
+        return bar;
+    }
+ 
+    private Component west() {
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout(4, 1));
+        p.add(lMonthSpend);
+        p.add(vMonthSpend);
+        p.add(lTodaySpend);
+        p.add(vTodaySpend);
+        return p;
+    }
+ 
+    private JPanel south() {
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout(2, 4));
+ 
+        p.add(lAvgSpendPerDay);
+        p.add(lMonthLeft);
+        p.add(lDayAvgAvailable);
+        p.add(lMonthLeftDay);
+        p.add(vAvgSpendPerDay);
+        p.add(vMonthAvailable);
+        p.add(vDayAvgAvailable);
+        p.add(vMonthLeftDay);
+ 
+        return p;
+    }
+ 
+    public static void main(String[] args) {
+         
+        GUIUtil.showPanel(SpendPanel.instance);
+    }
+ 
 }
