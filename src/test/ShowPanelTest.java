@@ -5,7 +5,10 @@ import javax.swing.JPanel;
 
 import util.GUIUtil;
 
-public class Test {
+/**
+ * @author lqkx
+ */
+public class ShowPanelTest {
     public static void main(String[] args) {
         GUIUtil.useLNF();
         JPanel p = new JPanel();
