@@ -8,5 +8,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="chart" level="project" />
+    <orderEntry type="library" name="liquidlnf" level="project" />
   </component>
 </module>
