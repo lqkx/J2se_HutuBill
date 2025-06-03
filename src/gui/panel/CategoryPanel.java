@@ -1,15 +1,11 @@
 package gui.panel;
  
-import java.awt.BorderLayout;
- 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
- 
 import gui.model.CategoryTableModel;
 import util.ColorUtil;
 import util.GUIUtil;
+
+import javax.swing.*;
+import java.awt.*;
  
 public class CategoryPanel extends JPanel{
     static{
