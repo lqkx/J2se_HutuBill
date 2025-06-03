@@ -1,15 +1,17 @@
 package gui.panel;
  
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.GridLayout;
+ 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+ 
 import util.CircleProgressBar;
 import util.ColorUtil;
 import util.GUIUtil;
-
-import javax.swing.*;
-import java.awt.*;
  
-/**
- * @author lqkx
- */
 public class SpendPanel extends JPanel{
     static{
         GUIUtil.useLNF();

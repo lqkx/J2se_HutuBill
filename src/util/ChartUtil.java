@@ -1,11 +1,17 @@
 package util;
-
+ 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+ 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+ 
 import com.objectplanet.chart.BarChart;
 import com.objectplanet.chart.Chart;
-
-import javax.swing.*;
-import java.awt.*;
-
+ 
 public class ChartUtil {
  
     public static int max(double[] sampleValues) {

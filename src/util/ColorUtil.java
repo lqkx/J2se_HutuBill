@@ -9,9 +9,8 @@ public class ColorUtil {
     public static Color warningColor = Color.decode("#FF3333");
  
     public static Color getByPercentage(int per) {
-        if (per > 100) {
+        if (per > 100)
             per = 100;
-        }
         int r = 51;
         int g = 255;
         int b = 51;

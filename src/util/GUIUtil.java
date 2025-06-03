@@ -45,9 +45,8 @@ public class GUIUtil {
     }   
  
     public static boolean checkNumber(JTextField tf, String input) {
-        if (!checkEmpty(tf, input)) {
+        if (!checkEmpty(tf, input))
             return false;
-        }
         String text = tf.getText().trim();
         try {
             Integer.parseInt(text);
@@ -60,9 +59,8 @@ public class GUIUtil {
     }
  
     public static boolean checkZero(JTextField tf, String input) {
-        if (!checkNumber(tf, input)) {
+        if (!checkNumber(tf, input))
             return false;
-        }
         String text = tf.getText().trim();
  
         if (0 == Integer.parseInt(text)) {

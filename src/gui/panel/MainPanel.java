@@ -1,10 +1,13 @@
 package gui.panel;
  
+import java.awt.BorderLayout;
+ 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
+ 
 import util.CenterPanel;
 import util.GUIUtil;
-
-import javax.swing.*;
-import java.awt.*;
  
 public class MainPanel extends JPanel {
     static {
