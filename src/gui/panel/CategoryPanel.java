@@ -10,7 +10,7 @@ import util.GUIUtil;
 import javax.swing.*;
 import java.awt.*;
  
-public class CategoryPanel extends JPanel {
+public class CategoryPanel extends WorkingPanel {
     static {
         GUIUtil.useLNF();
     }
